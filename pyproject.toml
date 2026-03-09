@@ -35,4 +35,4 @@ line-length = 100
 
 [tool.ruff]
 line-length = 100
-cache-dir = "/dev/null"
+cache-dir = ".ruff_cache"
