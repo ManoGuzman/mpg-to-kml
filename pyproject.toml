@@ -20,11 +20,15 @@ dev = [
     "ruff>=0.1.0",
 ]
 
+[project.scripts]
+mpg-to-kml = "mpg_to_kml.cli.main:main"
+
 [tool.setuptools.packages.find]
-where = ["."]
+where = ["src"]
 
 [tool.black]
 line-length = 100
 
 [tool.ruff]
 line-length = 100
+cache-dir = "/dev/null"
