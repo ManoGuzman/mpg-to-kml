@@ -31,6 +31,12 @@ def main():
     kms_traveled = get_float_input("Ingrese la distancia recorrida (kms): ")
 
     price_super_crc = get_recope_super_price()
+    if (
+        not isinstance(price_super_crc, (int, float))
+        or isinstance(price_super_crc, bool)
+        or price_super_crc <= 0
+    ):
+        raise ValueError(f"Invalid price returned by get_recope_super_price(): {price_super_crc}")
     kml_value, liters_consumed, total_cost = calculate_fuel_cost(
         mpg_value, kms_traveled, price_super_crc
     )
